@@ -22,7 +22,7 @@ class Index extends React.Component {
       <BaseLayout className='cover'>
         <div className='main-section'>
           <div className='background-image'>
-            <img src='/static/images/background-index.png' />
+            <img src='/static/images/background.png' />
           </div>
 
           <Container>
@@ -37,26 +37,26 @@ class Index extends React.Component {
                 </div>
               </Col>
               <Col md='9' className='hero-welcome-wrapper'>
-                <div className='nametitle'>Hi👋, I'm Michael.</div>
+                <div className='nametitle'>Michael Adenugba</div>
+
                 <div className='hero-welcome-text'>
                   <h1>
-                    Located in Ogun, Nigeria. I'm a software developer. I like
-                    to build, accessible websites and applications. Check out my
+                    Hi👋, I'm Michael, a software developer with a passion to
+                    build, accessible websites and applications. Check out my
                     projects I was working on throughout the year!
                   </h1>
-                  <Typed
-                    loop
-                    typeSpeed={60}
-                    backSpeed={60}
-                    strings={this.roles}
-                    backDelay={1000}
-                    loopCount={0}
-                    showCursor
-                    className='self-typed'
-                    cursorChar='|'
-                  />
                 </div>
-
+                <Typed
+                  loop
+                  typeSpeed={60}
+                  backSpeed={60}
+                  strings={this.roles}
+                  backDelay={1000}
+                  loopCount={0}
+                  showCursor
+                  className='self-typed'
+                  cursorChar='|'
+                />
                 {/* <div className='hero-welcome-bio'>
                   <h1>Let's take a look on my work.</h1>
                 </div> */}

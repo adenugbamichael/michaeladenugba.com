@@ -2,7 +2,11 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&Poppins:wght@700");
 
+// PAGES
 @import "./Home.module.scss";
+
+// C
+@import "./header";
 
 html,
 body {
@@ -15,4 +19,17 @@ body {
 
 a {
   text-decoration: none !important;
+}
+p,
+h1,
+h2 {
+  color: #ccc;
+}
+
+.absolute {
+  position: absolute;
+}
+.base-page {
+  padding-top: 150px;
+  color: #ccc;
 }

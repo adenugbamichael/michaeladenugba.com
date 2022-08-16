@@ -1,0 +1,52 @@
+.bgcolor {
+  background-color: #333;
+}
+
+// HEADER
+.port-navbar.port-default {
+  width: 100%;
+  z-index: 15;
+
+  span {
+    color: rgb(102, 102, 102);
+    align-items: center;
+    display: flex;
+  }
+  //   padding: 40px;
+
+  .port-navbar {
+    &-brand {
+      color: #eee;
+      font-size: 24px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
+    &-item {
+      //   margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    &-link {
+      color: rgb(204, 204, 204);
+
+      letter-spacing: 0.8px;
+      font-size: 1em;
+
+      &.active {
+        color: #ffa000;
+      }
+
+      &:hover,
+      &:focus {
+        color: #ffa000;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .mini {
+    color: #333 !important;
+  }
+}
