@@ -13,6 +13,7 @@ background-color2: #1a202c; //background
 colortext1:#fff; //heading1
 colortext1:#cbd5e0 //paragraph1
 colortext1:#9f7aea; //paragraph2
+colortext1:##8257E5; //paragraph2
 
 background-color2: #555; //background
 colortext1:#ccc; //heading1

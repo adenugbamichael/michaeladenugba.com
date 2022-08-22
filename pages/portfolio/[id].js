@@ -1,6 +1,6 @@
 import React from "react"
 import BaseLayout from "@layouts/BaseLayout"
-import BasePage from "../components/BasePage"
+import BasePage from "@components/BasePage"
 import { withRouter } from "next/router"
 import axios from "axios"
 
@@ -25,8 +25,8 @@ class Portfolio extends React.Component {
       <BaseLayout>
         <BasePage>
           <h1>{portfolio.title}</h1>
-          <h2>BODY: {portfolio.body}</h2>
-          <p>ID: {portfolio.id}</p>
+          <h2>{portfolio.body}</h2>
+          <p>{portfolio.id}</p>
         </BasePage>
       </BaseLayout>
     )

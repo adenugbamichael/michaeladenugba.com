@@ -1,6 +1,9 @@
 .bgcolor {
   background-color: #333;
 }
+.navbar {
+  padding: 0.5rem 0 !important;
+}
 
 // HEADER
 .port-navbar.port-default {
@@ -8,21 +11,21 @@
   z-index: 15;
 
   span {
-    color: rgb(102, 102, 102);
+    color: rgb(204, 204, 204);
     align-items: center;
     display: flex;
   }
   //   padding: 40px;
+  .mini {
+    color: rgb(102, 102, 102);
+  }
 
   .port-navbar {
     &-brand {
-      color: #eee;
+      color: rgb(204, 204, 204);
       font-size: 24px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
       font-weight: bold;
     }
-
     &-item {
       //   margin-left: 10px;
       margin-right: 10px;
@@ -32,7 +35,7 @@
       color: rgb(204, 204, 204);
 
       letter-spacing: 0.8px;
-      font-size: 1em;
+      font-size: 1rem !important;
 
       &.active {
         color: #ffa000;
@@ -43,6 +46,20 @@
         color: #ffa000;
       }
     }
+  }
+}
+.spa {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .navspace {
+    line-height: 18px !important;
+  }
+
+  .marjin {
+    margin-top: -20px;
+    /* margin-bottom: 4rem; */
   }
 }
 @media (max-width: 767px) {

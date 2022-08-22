@@ -7,25 +7,34 @@
 
 // C
 @import "./header";
-
+* {
+  margin: 0px;
+}
 html,
 body {
   height: 100%;
   width: 100%;
-  font-family: Lucida Grande, Lucida Sans, Lucida Sans Regular,
-    Lucida Sans Unicode, Geneva, Verdana, sans-serif !important;
-  // font-family: "Nunito Sans", sans-serif !important;
+  // font-family: Lucida Grande, Lucida Sans, Lucida Sans Regular,
+  //   Lucida Sans Unicode, Geneva, Verdana, sans-serif !important;
+  font-family: "Nunito Sans", sans-serif !important;
 }
 
 a {
   text-decoration: none !important;
 }
+p {
+  font-size: 1.3rem;
+}
 p,
-h1,
 h2 {
   color: #ccc;
 }
-
+h1 {
+  color: rgb(238, 238, 238);
+}
+.clickable {
+  cursor: pointer;
+}
 .absolute {
   position: absolute;
 }
