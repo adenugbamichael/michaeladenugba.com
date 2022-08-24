@@ -56,6 +56,7 @@ export default class Header extends React.Component {
   }
   render() {
     const { isAuthenticated } = this.props
+
     return (
       <div className='bgcolor'>
         <Navbar
@@ -97,6 +98,7 @@ export default class Header extends React.Component {
               <Logout />
             </NavItem> */}
             </Nav>
+
             {!isAuthenticated && (
               <NavbarText className='spa'>
                 <Login />
@@ -113,14 +115,3 @@ export default class Header extends React.Component {
     )
   }
 }
-
-// function Header(args) {
-//   const [isOpen, setIsOpen] = useState(false)
-
-//   const toggle = () => setIsOpen(!isOpen)
-//   return(
-//     <div className="">
-//       {/*  */}
-//     </div>
-//   )
-// export default Header

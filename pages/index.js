@@ -11,6 +11,7 @@ class Index extends React.Component {
   }
 
   render() {
+    const { isAuthenticated, user } = this.props.auth
     return (
       <BaseLayout className='cover' {...this.props.auth}>
         <div className='main-section'>
@@ -57,76 +58,68 @@ class Index extends React.Component {
                 </div>
               </Col>
               <Col md='7' className='hero-welcome-wrapper'>
-                <div className='hero-welcome-text'>
-                  <h1>Engineer. Developer.</h1>
-                  {/* <h1>
-                    Hi👋, I'm Michael, a software developer with a passion to
-                    build, accessible websites and applications. Check out my
-                    recent works and many more.
-                  </h1> */}
-                  <p className='split'>
-                    I'm a software engineer, mainly focused in frontend
-                    development, but I enjoy creating apps and things people
-                    will like to use. I also use an open source to share
-                    knowledge. You can check my full bio on the links below.
-                  </p>
-                  {/* <p className='split'>
-                    Hi👋, I'm Michael Adenugba, a software developer. I like to
-                    build, applications, and to share knowledge using an open
-                    source platform. Check out the links below to discover my
-                    recent works and many more.
-                  </p> */}
+                <div className='atween'>
+                  <div className='hero-welcome-text'>
+                    <h1>
+                      {/* {isAuthenticated && <span>{user.name}</span>} */}
+                      Engineer. Developer.
+                    </h1>
+
+                    <p className='split'>
+                      I'm a software engineer, mainly focused in frontend
+                      development, but I enjoy creating apps and things people
+                      will like to use. I also use an open source to share
+                      knowledge. You can check my full bio on the links below.
+                    </p>
+                  </div>
+
+                  <Row className='soci-up'>
+                    <Col sm='2' className='duce'>
+                      <p className='pre'>Connect</p>
+                    </Col>
+                    <Col sm='10' className='roll duce'>
+                      <ul class='social eSPOhw contact-bar'>
+                        <li>
+                          <a
+                            title='My Twitter'
+                            class='contact-item contact-twitter'
+                            href='https://twitter.com/MichaelAdenugba'
+                          >
+                            Twitter
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            title='My GitHub'
+                            class='contact-item contact-github'
+                            href='https://github.com/adenugbamichael'
+                          >
+                            GitHub
+                          </a>
+                        </li>
+
+                        <li>
+                          <a
+                            title='My LinkedIn'
+                            class='contact-item contact-linkedin'
+                            href='https://www.linkedin.com/in/adenugba-michael-925019209/'
+                          >
+                            LinkedIn
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            title='My Email'
+                            class='contact-item contact-email'
+                            href='mailto:adenugbamicke@gmail.com'
+                          >
+                            Email
+                          </a>
+                        </li>
+                      </ul>
+                    </Col>
+                  </Row>
                 </div>
-                {/* <div className='hero-welcome-bio'>
-                  <h1>Let's take a look on my work.</h1>
-                </div> */}
-
-                <Row className='soci-up'>
-                  <Col sm='2' className='duce'>
-                    <p className='pre'>Connect</p>
-                  </Col>
-                  <Col sm='10' className='roll duce'>
-                    <ul class='social eSPOhw contact-bar'>
-                      <li>
-                        <a
-                          title='My Twitter'
-                          class='contact-item contact-twitter'
-                          href='https://twitter.com/MichaelAdenugba'
-                        >
-                          Twitter
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          title='My GitHub'
-                          class='contact-item contact-github'
-                          href='https://github.com/adenugbamichael'
-                        >
-                          GitHub
-                        </a>
-                      </li>
-
-                      <li>
-                        <a
-                          title='My LinkedIn'
-                          class='contact-item contact-linkedin'
-                          href='https://www.linkedin.com/in/adenugba-michael-925019209/'
-                        >
-                          LinkedIn
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          title='My Email'
-                          class='contact-item contact-email'
-                          href='mailto:adenugbamicke@gmail.com'
-                        >
-                          Email
-                        </a>
-                      </li>
-                    </ul>
-                  </Col>
-                </Row>
               </Col>
             </Row>
           </Container>
