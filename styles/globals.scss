@@ -35,10 +35,13 @@ h1 {
 .clickable {
   cursor: pointer;
 }
-.absolute {
-  position: absolute;
-}
+// .absolute {
+//   position: absolute;
+// }
 .base-page {
   padding-top: 150px;
   color: #ccc;
+}
+img {
+  vertical-align: initial !important;
 }

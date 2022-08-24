@@ -12,7 +12,7 @@ class Index extends React.Component {
 
   render() {
     return (
-      <BaseLayout className='cover'>
+      <BaseLayout className='cover' {...this.props.auth}>
         <div className='main-section'>
           <div className='background-image'>
             <img src='/static/images/background-index.png' />
@@ -81,7 +81,7 @@ class Index extends React.Component {
                   <h1>Let's take a look on my work.</h1>
                 </div> */}
 
-                <Row>
+                <Row className='soci-up'>
                   <Col sm='2' className='duce'>
                     <p className='pre'>Connect</p>
                   </Col>

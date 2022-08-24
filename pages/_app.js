@@ -1,9 +1,53 @@
 // Custom App Scss
-import "@styles/globals.scss"
-import "bootstrap/dist/css/bootstrap.min.css"
+import React from "react"
+import App from "next/app"
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import auth0 from "../services/auth0"
+
+// Styling
+import "bootstrap/dist/css/bootstrap.min.css"
+import "@styles/globals.scss"
+
+export default class MyApp extends App {
+  static async getInitialProps({ Component, router, ctx }) {
+    let pageProps = {}
+    const isAuthenticated =
+      typeof window === "object"
+        ? auth0.clientAuth()
+        : auth0.serverAuth(ctx.req)
+
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx)
+    }
+
+    const auth = { isAuthenticated }
+
+    return { pageProps, auth }
+  }
+
+  render() {
+    const { Component, pageProps, auth } = this.props
+    return <Component {...pageProps} auth={auth} />
+  }
 }
 
-export default MyApp
+//////////////////////////////
+////////////////////////////////////
+///////////////////////////////
+
+// // Custom App Scss
+// import "@styles/globals.scss"
+// import "bootstrap/dist/css/bootstrap.min.css"
+
+// import auth0 from "../services/auth0"
+
+// function MyApp({ Component, pageProps, ctx }) {
+//   const isAuthenticated = "object"
+//     ? auth0.clientAuth()
+//     : auth0.serverAuth(ctx.req)
+//   console.log(isAuthenticated)
+
+//   return <Component {...pageProps} />
+// }
+
+// export default MyApp

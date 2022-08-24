@@ -22,12 +22,6 @@ const BsNavLink = (props) => {
   )
 }
 
-// const Login = () => {
-//   return <span className='nav-link port-navbar-link'>Login</span>
-// }
-// const Logout = () => {
-//   return <span className='nav-link port-navbar-link'>Logout</span>
-// }
 const Login = () => {
   return (
     <span onClick={auth0.login} className='nav-link port-navbar-link clickable'>
@@ -46,67 +40,87 @@ const Logout = () => {
   )
 }
 
-function Header(args) {
-  const [isOpen, setIsOpen] = useState(false)
+export default class Header extends React.Component {
+  constructor(props) {
+    super(props)
 
-  const toggle = () => setIsOpen(!isOpen)
+    this.toggle = this.toggle.bind(this)
+    this.state = {
+      isOpen: false,
+    }
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen,
+    })
+  }
+  render() {
+    const { isAuthenticated } = this.props
+    return (
+      <div className='bgcolor'>
+        <Navbar
+          dark
+          expand='md'
+          color='transparent'
+          className='container-md port-navbar navspace absolute port-default'
+        >
+          <NavbarBrand className='port-navbar-brand' href='/'>
+            <img src='/static/images/logo.svg' alt='' />
+          </NavbarBrand>
 
-  return (
-    <div className='bgcolor'>
-      <Navbar
-        {...args}
-        dark
-        expand='md'
-        color='transparent'
-        className='container-md port-navbar navspace absolute port-default'
-      >
-        <NavbarBrand className='port-navbar-brand' href='/'>
-          <img src='/static/images/logo.svg' alt='' />
-        </NavbarBrand>
-
-        <NavbarToggler eee onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className='me-auto' navbar>
-            <NavItem className='port-navbar-item'>
-              <BsNavLink route='/' title='Home' />
-            </NavItem>
-            <span className='port-navbar-item mini'>|</span>
-            <NavItem className='port-navbar-item'>
-              <BsNavLink route='/about' title='About' />
-            </NavItem>
-            <span className='port-navbar-item mini'>|</span>
-            <NavItem className='port-navbar-item'>
-              <BsNavLink route='/portfolios' title='Portfolio' />
-            </NavItem>
-            <span className='port-navbar-item mini'>|</span>
-            <NavItem className='port-navbar-item'>
-              <BsNavLink route='/blogs' title='Blog' />
-            </NavItem>
-            <span className='port-navbar-item mini'>|</span>
-            <NavItem className='port-navbar-item'>
-              <BsNavLink route='/cv' title='CV' />
-            </NavItem>
-            {/* <NavItem className='port-navbar-item'>
+          <NavbarToggler eee onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className='me-auto' navbar>
+              <NavItem className='port-navbar-item'>
+                <BsNavLink route='/' title='Home' />
+              </NavItem>
+              <span className='port-navbar-item mini'>|</span>
+              <NavItem className='port-navbar-item'>
+                <BsNavLink route='/about' title='About' />
+              </NavItem>
+              <span className='port-navbar-item mini'>|</span>
+              <NavItem className='port-navbar-item'>
+                <BsNavLink route='/portfolios' title='Portfolio' />
+              </NavItem>
+              <span className='port-navbar-item mini'>|</span>
+              <NavItem className='port-navbar-item'>
+                <BsNavLink route='/blogs' title='Blog' />
+              </NavItem>
+              <span className='port-navbar-item mini'>|</span>
+              <NavItem className='port-navbar-item'>
+                <BsNavLink route='/cv' title='CV' />
+              </NavItem>
+              {/* <NavItem className='port-navbar-item'>
               <Login />
             </NavItem>
             <NavItem className='port-navbar-item'>
               <Logout />
             </NavItem> */}
-          </Nav>
-          {!auth0.isAuthenticated() && (
-            <NavbarText className='spa'>
-              <Login />
-            </NavbarText>
-          )}
-          {auth0.isAuthenticated() && (
-            <NavbarText className='spa'>
-              <Logout />
-            </NavbarText>
-          )}
-        </Collapse>
-      </Navbar>
-    </div>
-  )
+            </Nav>
+            {!isAuthenticated && (
+              <NavbarText className='spa'>
+                <Login />
+              </NavbarText>
+            )}
+            {isAuthenticated && (
+              <NavbarText className='spa'>
+                <Logout />
+              </NavbarText>
+            )}
+          </Collapse>
+        </Navbar>
+      </div>
+    )
+  }
 }
 
-export default Header
+// function Header(args) {
+//   const [isOpen, setIsOpen] = useState(false)
+
+//   const toggle = () => setIsOpen(!isOpen)
+//   return(
+//     <div className="">
+//       {/*  */}
+//     </div>
+//   )
+// export default Header
