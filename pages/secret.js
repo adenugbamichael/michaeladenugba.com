@@ -3,13 +3,13 @@ import BaseLayout from "@layouts/BaseLayout"
 import BasePage from "@components/BasePage"
 
 import withAuth from "@hoc/withAuth"
-import { getSecretData } from "../actions"
+import { getSecretData, getSecretDataServer } from "../actions"
 
 class Secret extends React.Component {
-  static getInitialProps() {
-    const superSecretValue = "Super Secret Value"
+  static async getInitialProps({ req }) {
+    const anotherSecretData = await getSecretData(req)
 
-    return { superSecretValue }
+    return { anotherSecretData }
   }
 
   // constructor(props) {

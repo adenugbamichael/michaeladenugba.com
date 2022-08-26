@@ -1,20 +1,23 @@
 import axios from "axios"
 import Cookies from "js-cookie"
 
-const setAuthHeader = () => {
-  const token = Cookies.getJSON("jwt")
+import { getCookieFromReq } from "../helpers/utils"
+
+const setAuthHeader = (req) => {
+  const token = req ? getCookieFromReq(req, "jwt") : Cookies.getJSON("jwt")
 
   if (token) {
     return {
-      headers: { authorization: `Bearer ${Cookies.getJSON("jwt")}` },
+      headers: { authorization: `Bearer ${token}` },
     }
   }
 
   return undefined
 }
 
-export const getSecretData = async () => {
+export const getSecretData = async (req) => {
+  const url = "http://localhost:3000/api/v1/secret"
   return await axios
-    .get("/api/v1/secret", setAuthHeader())
+    .get(url, setAuthHeader(req))
     .then((response) => response.data)
 }
