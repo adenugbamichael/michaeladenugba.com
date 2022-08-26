@@ -16,8 +16,8 @@ colortext1:#9f7aea; //paragraph2
 colortext1:##8257E5; //paragraph2
 
 background-color2: #555; //background
-colortext1:#ccc; //heading1
-colortext1:#ccc; //paragraph1
+
+colortext1:#ccc; //paragraph1/heading1
 colortext1:#ffa000; //paragraph2
 font-family: ,Lucida Sans,Lucida Sans Regular,Lucida Sans Unicode,Geneva,Verdana,sans-serif;
 }
