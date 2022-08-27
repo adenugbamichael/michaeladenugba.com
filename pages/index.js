@@ -7,13 +7,13 @@ import { Button, Container, Row, Col } from "reactstrap"
 class Index extends React.Component {
   constructor(props) {
     super(props)
-    this.roles = ["JavaScript 💻", "React ⚛️🧶", "Nextjs ✨"]
+    this.roles = ["JavaScript", "React", "Nextjs"]
   }
 
   render() {
     const { isAuthenticated, user } = this.props.auth
     return (
-      <BaseLayout className='cover' {...this.props.auth}>
+      <BaseLayout className='cover' {...this.props.auth} headerType='index'>
         <div className='main-section'>
           <div className='background-image'>
             <img src='/static/images/background-index.png' />
@@ -42,8 +42,8 @@ class Index extends React.Component {
 
                           {/* <img src='/static/images/frame.svg' alt='' /> */}
                         </div>
-                        <div className='hero-section-content-intro'>
-                          hello world 🌎. I'm michael
+                        <div className='hero-section-content-intro-'>
+                          hello world 🌎. I'm <span>michael adenugba</span>
                         </div>
                       </div>
                       <img

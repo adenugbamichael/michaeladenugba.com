@@ -1,20 +1,21 @@
-.navbar {
-  padding: 0.5rem 0 !important;
-}
+// .navbar {
+//   padding: 0.5rem 0 !important;
+// }
 .bgcolor {
-  background-color: #333 !important;
+  background-color: #2e2e2e !important;
 }
 // img {
 //   vertical-align: none !important;
 // }
 
 // HEADER
-.port-navbar.port-default {
+.port-navbar.port-nav-base {
   width: 100%;
   z-index: 15;
 
   span {
-    color: rgb(204, 204, 204);
+    color: rgb(199, 199, 199);
+    // color: rgb(204, 204, 204);
     align-items: center;
     display: flex;
   }
@@ -25,7 +26,8 @@
 
   .port-navbar {
     &-brand {
-      color: rgb(204, 204, 204);
+      color: rgb(199, 199, 199);
+      // color: rgb(204, 204, 204);
       font-size: 24px;
       font-weight: bold;
     }
@@ -35,7 +37,8 @@
     }
 
     &-link {
-      color: rgb(204, 204, 204);
+      color: rgb(199, 199, 199);
+      // color: rgb(204, 204, 204);
 
       letter-spacing: 0.8px;
       font-size: 1rem !important;
@@ -69,4 +72,11 @@
   .mini {
     color: #333 !important;
   }
+}
+
+// --------- DEFAULT HEADER -------------
+.port-navbar.port-nav-base.port-nav-default {
+  padding: 0.5rem !important;
+  // padding: 0.5rem 0 !important;
+  // background-color: $secondary !important;
 }

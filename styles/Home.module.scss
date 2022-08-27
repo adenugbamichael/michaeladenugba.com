@@ -2,10 +2,10 @@ html,
 body {
   height: 100%;
   width: 100%;
-  // font-family: Lucida Grande, Lucida Sans, Lucida Sans Regular,
-  //   Lucida Sans Unicode, Geneva, Verdana, sans-serif !important;
+  font-family: Lucida Grande, Lucida Sans, Lucida Sans Regular,
+    Lucida Sans Unicode, Geneva, Verdana, sans-serif !important;
 
-  font-family: "Nunito Sans", sans-serif !important;
+  // font-family: "Nunito Sans", sans-serif !important;
 }
 
 // WRAPPER
@@ -57,6 +57,12 @@ body {
     &-intro {
       font-size: 17px;
     }
+    span {
+      box-shadow: inset 0 -2px;
+      color: rgb(71, 167, 245);
+      cursor: pointer;
+      padding: 0.5em 0;
+    }
   }
 }
 
@@ -66,8 +72,8 @@ body {
 }
 
 .hero-welcome-text > h1 {
-  color: rgb(238, 238, 238);
-
+  color: rgb(199, 199, 199);
+  font-family: "Nunito Sans", sans-serif !important;
   font-size: 64px;
   margin-top: 60px;
   font-weight: 900 !important;

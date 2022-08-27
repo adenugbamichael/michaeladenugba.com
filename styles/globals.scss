@@ -4,6 +4,7 @@
 
 // PAGES
 @import "./Home.module.scss";
+@import "./portfolios";
 
 // C
 @import "./header";
@@ -14,9 +15,9 @@ html,
 body {
   height: 100%;
   width: 100%;
-  // font-family: Lucida Grande, Lucida Sans, Lucida Sans Regular,
-  //   Lucida Sans Unicode, Geneva, Verdana, sans-serif !important;
-  font-family: "Nunito Sans", sans-serif !important;
+  font-family: Lucida Grande, Lucida Sans, Lucida Sans Regular,
+    Lucida Sans Unicode, Geneva, Verdana, sans-serif !important;
+  // font-family: "Nunito Sans", sans-serif !important;
 }
 
 a {
@@ -27,21 +28,44 @@ p {
 }
 p,
 h2 {
-  color: #ccc;
+  color: rgb(199, 199, 199);
+  // color: #ccc;
 }
 h1 {
-  color: rgb(238, 238, 238);
+  color: rgb(199, 199, 199);
+  // color: rgb(238, 238, 238);
 }
+// HEADER HI Color only
+// color: rgb(238, 238, 238);
+// PAGE Color and H2 ONLY!
+// color: #ccc;
+// FOOTER BACKGROUND
+// background-color: rgb(17, 17, 17);
 .clickable {
   cursor: pointer;
 }
 // .absolute {
 //   position: absolute;
 // }
-.base-page {
-  padding-top: 150px;
-  color: #ccc;
-}
+
 img {
   vertical-align: initial !important;
+}
+
+//GLOBAL HEADER
+.base-page {
+  padding-top: 150px;
+  color: rgb(199, 199, 199);
+  // background-color: #333;
+  background-color: #222;
+  min-height: 100vh;
+
+  .page-header {
+    .page-header-title {
+      font-weight: 700;
+      color: #ffa000;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+  }
 }

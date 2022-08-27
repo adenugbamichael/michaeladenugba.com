@@ -55,7 +55,7 @@ export default class Header extends React.Component {
     })
   }
   render() {
-    const { isAuthenticated } = this.props
+    const { isAuthenticated, user, className } = this.props
 
     return (
       <div className='bgcolor'>
@@ -63,7 +63,7 @@ export default class Header extends React.Component {
           dark
           expand='md'
           color='transparent'
-          className='container-md port-navbar navspace absolute port-default'
+          className={`container-md port-navbar port-nav-base navspace absolute ${className}`}
         >
           <NavbarBrand className='port-navbar-brand' href='/'>
             <img src='/static/images/logo.svg' alt='' />
