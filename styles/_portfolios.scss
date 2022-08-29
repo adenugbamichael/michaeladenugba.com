@@ -5,13 +5,100 @@
   padding: 150px 0 0;
   // background-color: $base-page-white;
 
+  // --------WHOLEPOST STYLING----------------
+  ////////////////////////////////////////////////////////////////
+
+  .wholepost {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    align-items: flex-start;
+    // grid-gap: 1.5rem;
+    padding: 1.5rem 0;
+    background-color: rgb(36, 36, 36);
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  @supports (overscroll-behavior-x: contain) and
+    (not (-webkit-overflow-scrolling: touch)) {
+    .wholepost {
+      background-image: linear-gradient(
+          90deg,
+          hsl(0, 0%, calc(18% - 4%)),
+          hsl(0, 0%, calc(18% - 4%), 0) 4rem,
+          hsl(0, 0%, calc(18% - 4%), 0) calc(100% - 4rem),
+          hsl(0, 0%, calc(18% - 4%))
+        ),
+        radial-gradient(
+          1rem 50% at left center,
+          hsla(0, 0%, 0%, 0.3),
+          hsla(0, 0%, 0%, 0)
+        ),
+        radial-gradient(
+          1rem 50% at right center,
+          hsla(0, 0%, 0%, 0.3),
+          hsla(0, 0%, 0%, 0)
+        );
+      background-attachment: local, scroll, scroll;
+    }
+  }
+
+  /* Some browsers (e.g. Firefox) make scrollable elements focusable. */
+  .wholepost:focus {
+    outline: 0;
+  }
+
+  .wholepost::before,
+  .wholepost::after {
+    content: "";
+    align-self: stretch;
+  }
+
+  /* If the last grid item has 0 width it doesn’t render. */
+  .daui-Scroll::after {
+    width: 1px;
+    margin-left: -1px;
+  }
+
+  .outside {
+    position: relative;
+    display: block;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    width: fit-content;
+    max-width: 100%;
+    text-decoration: none;
+  }
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+    // margin-bottom: 0.5em;
+    width: 14em;
+    font-size: 1.1rem;
+  }
+
+  /////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////
+
   .portfolio-card {
     background-color: rgb(46, 46, 46);
     // background-image: linear-gradient(45deg, #4e54c8 0%, #8f94fb 100%);
     border: none;
     color: white;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
 
     &:hover {
       cursor: pointer;
@@ -29,6 +116,7 @@
       text-transform: uppercase;
       font-weight: 600;
       font-size: 17px;
+      color: rgb(199, 199, 199);
     }
 
     &-city {
@@ -57,12 +145,28 @@
       // line-height: 1.3;
       // text-transform: uppercase;
       // margin-bottom: 50px;
-      margin-top: 1em;
+      margin-top: 0.8em;
       margin-bottom: 1em;
       max-width: 30em;
       line-height: 22.88px;
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: rgba(199, 199, 199, 0.7);
+    }
+    .tool > ul {
+      margin: 0px 0px 0px -0.25em;
+      padding: 0px;
+      list-style: none;
+      text-align: left;
+      color: rgb(199, 199, 199);
+    }
+    .tool > ul > li {
+      display: inline-block;
+      margin: 0.25em;
+      padding: 0.25em 0.5em;
+      background-color: rgb(136, 136, 136);
+      color: white;
+      border-radius: 0.25em;
+      font-size: 0.66em;
     }
   }
 }

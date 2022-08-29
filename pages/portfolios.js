@@ -32,18 +32,32 @@ class Portfolios extends React.Component {
       return (
         <Col md='4'>
           <React.Fragment key={index}>
-            <span>
-              <Card className='portfolio-card'>
-                <img alt='Sample' src='https://picsum.photos/300/200' />
-                <CardBody
-                  style={{
-                    margin: "1rem",
-                  }}
-                >
-                  <CardTitle className='portfolio-card-title' tag='h5'>
-                    Card title
-                  </CardTitle>
-
+            <span className='outside'>
+              <Card
+                className='portfolio-card inner'
+                // style={{
+                //   width: "18rem",
+                // }}
+              >
+                <CardHeader className='portfolio-card-header'>
+                  Some Position {index}
+                </CardHeader>
+                <img
+                  alt='Card cap'
+                  src='/static/images/portfolio/kai.png'
+                  width='100%'
+                />
+                <CardBody>
+                  <div class='tool'>
+                    <ul>
+                      <li>react</li>
+                      <li>nodejs</li>
+                      <li>nextjs</li>
+                      <li>serverless</li>
+                      <li>auth0</li>
+                      <li>Styled components</li>
+                    </ul>
+                  </div>
                   <CardText className='portfolio-card-text'>
                     Some quick example text to build on the card title and make
                     up the bulk of the card‘s content.
@@ -57,12 +71,13 @@ class Portfolios extends React.Component {
       )
     })
   }
+
   render() {
     const { posts } = this.props
     return (
       <BaseLayout {...this.props.auth}>
         <BasePage className='portfolio-page' title='Portfolios'>
-          <Row>{this.renderPosts(posts)}</Row>
+          <Row className='wholepost'>{this.renderPosts(posts)}</Row>
         </BasePage>
       </BaseLayout>
     )
@@ -70,62 +85,3 @@ class Portfolios extends React.Component {
 }
 
 export default Portfolios
-
-{
-  /* <Card
-  style={{
-    width: '18rem'
-  }}
->
-  <img
-    alt="Sample"
-    src="https://picsum.photos/300/200"
-  />
-  <CardBody>
-    <CardTitle tag="h5">
-      Card title
-    </CardTitle>
-    <CardSubtitle
-      className="mb-2 text-muted"
-      tag="h6"
-    >
-      Card subtitle
-    </CardSubtitle>
-    <CardText>
-      Some quick example text to build on the card title and make up the bulk of the card‘s content.
-    </CardText>
-    <Button>
-      Button
-    </Button>
-  </CardBody>
-</Card> */
-}
-
-////////////////////////////////////////////
-////////////////////////////////////////////
-////////////////////////////////////////////
-////////////////////////////////////////////
-////////////////////////////////////////////
-////////////////////////////////////////////
-
-// ;<Col md='4'>
-//   <React.Fragment key={index}>
-//     <span>
-//       <Card className='portfolio-card'>
-//         <CardHeader className='portfolio-card-header'>
-//           Some Position {index}
-//         </CardHeader>
-//         <CardBody>
-//           <p className='portfolio-card-city'> Some Location {index} </p>
-//           <CardTitle className='portfolio-card-title'>
-//             Some Company {index}
-//           </CardTitle>
-//           <CardText className='portfolio-card-text'>
-//             Some Description {index}
-//           </CardText>
-//           <div className='readMore'> </div>
-//         </CardBody>
-//       </Card>
-//     </span>
-//   </React.Fragment>
-// </Col>
