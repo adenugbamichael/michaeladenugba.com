@@ -48,16 +48,22 @@ h1 {
 //   position: absolute;
 // }
 
+.error {
+  font-weight: 700;
+  color: #ca486d;
+}
+
 img {
   vertical-align: initial !important;
 }
 
 //GLOBAL HEADER
 .base-page {
-  padding-top: 50px;
+  padding: 50px 0 50px 0;
   color: rgb(199, 199, 199);
   // background-color: #333;
   background-color: #222;
+  box-shadow: inset 0 10px 10px rgb(0 0 0 / 88%);
   min-height: 100vh;
 
   .page-header {
