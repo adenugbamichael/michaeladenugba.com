@@ -1,10 +1,19 @@
-const express = require("express")
-const router = express.Router()
+const Book = require("../models/book")
 
-router.post("/api/v1/books", (req, res) => {
-  const bookDate = req.body
+exports.getBooks = (req, res) => {
+  Book.find({}, (err, allBooks) => {
+    if (err) {
+      return res.status(422).send(err)
+    }
 
-  const book = new Book(bookDate)
+    return res.json(allBooks)
+  })
+}
+
+exports.saveBook = (req, res) => {
+  const bookData = req.body
+  console.log(bookData)
+  const book = new Book(bookData)
 
   book.save((err, createdBook) => {
     if (err) {
@@ -13,19 +22,9 @@ router.post("/api/v1/books", (req, res) => {
 
     return res.json(createdBook)
   })
-})
+}
 
-router.get("/api/v1/books", (req, res) => {
-  Book.find({}, (err, allBooks) => {
-    if (err) {
-      return res.status(422).send(err)
-    }
-
-    return res.json(allBooks)
-  })
-})
-
-router.patch("/api/v1/books/:id", (req, res) => {
+exports.updateook = (req, res) => {
   const bookId = req.params.id
   const bookData = req.body
 
@@ -43,9 +42,9 @@ router.patch("/api/v1/books/:id", (req, res) => {
       return res.json(foundBook)
     })
   })
-})
+}
 
-router.delete("/api/v1/books/:id", (req, res) => {
+exports.deleteBook = (req, res) => {
   const bookId = req.params.id
 
   Book.deleteOne({ _id: bookId }, (err, deletedBook) => {
@@ -55,6 +54,4 @@ router.delete("/api/v1/books/:id", (req, res) => {
 
     return res.json({ status: "DELETED" })
   })
-})
-
-module.exports = router
+}

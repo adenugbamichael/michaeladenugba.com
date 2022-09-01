@@ -13,6 +13,8 @@ const config = require("./config")
 const Book = require("./models/book")
 const bodyParser = require("body-parser")
 
+const bookRoutes = require("./routes/book")
+
 const secretData = [
   {
     title: "SecretData 1",
@@ -34,6 +36,8 @@ app
   .then(() => {
     const server = express()
     server.use(bodyParser.json())
+
+    server.use("/api/v1/books", bookRoutes)
 
     server.get("/api/v1/secret", authService.checkJWT, (req, res) => {
       return res.json(secretData)
