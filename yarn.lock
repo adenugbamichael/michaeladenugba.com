@@ -155,14 +155,7 @@
     "@types/qs" "*"
     "@types/range-parser" "*"
 
-"@types/express-unless@^0.5.3":
-  "integrity" "sha512-TyPLQaF6w8UlWdv4gj8i46B+INBVzURBNRahCozCSXfsK2VTlL1wNyTlMKw817VHygBtlcl5jfnPadlydr06Yw=="
-  "resolved" "https://registry.npmjs.org/@types/express-unless/-/express-unless-0.5.3.tgz"
-  "version" "0.5.3"
-  dependencies:
-    "@types/express" "*"
-
-"@types/express@*", "@types/express@^4.17.13":
+"@types/express@^4.17.13":
   "integrity" "sha512-6bSZTPaTIACxn48l50SR+axgrqm6qXFIxrdAKaG6PaJk3+zuUr35hBlgT7vOmJcum+OEaIBLtHV/qloEAFITeA=="
   "resolved" "https://registry.npmjs.org/@types/express/-/express-4.17.13.tgz"
   "version" "4.17.13"
@@ -412,6 +405,11 @@
   "integrity" "sha512-eBvWn1lvIApYMhzQMsu9ciLfkBY499mFZlNqG+/9WR7PVlroQw0vG30cOQQbaKz3sCEc44TAOu2ykzqXSNnwag=="
   "resolved" "https://registry.npmjs.org/ast-types-flow/-/ast-types-flow-0.0.7.tgz"
   "version" "0.0.7"
+
+"async@^1.5.0":
+  "integrity" "sha512-nSVgobk4rv61R9PUSDtYt7mPVB2olxNR5RWJcAsH676/ef11bUZwvu7+RGYrYauVdDPcO519v68wRhXQtxsV9w=="
+  "resolved" "https://registry.npmjs.org/async/-/async-1.5.2.tgz"
+  "version" "1.5.2"
 
 "asynckit@^0.4.0":
   "integrity" "sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q=="
@@ -1082,20 +1080,20 @@
   "resolved" "https://registry.npmjs.org/etag/-/etag-1.8.1.tgz"
   "version" "1.8.1"
 
-"express-jwt@^7.7.5":
-  "integrity" "sha512-2CMse20Ex2vbqvsuGAcai7TgQuvmFa1n39PwKLaEszTGhuRzckBERII4PwdZIibtwfYUGSNVQzPpf+QcGo2yHw=="
-  "resolved" "https://registry.npmjs.org/express-jwt/-/express-jwt-7.7.5.tgz"
-  "version" "7.7.5"
+"express-jwt@^5.3.1":
+  "integrity" "sha512-1C9RNq0wMp/JvsH/qZMlg3SIPvKu14YkZ4YYv7gJQ1Vq+Dv8LH9tLKenS5vMNth45gTlEUGx+ycp9IHIlaHP/g=="
+  "resolved" "https://registry.npmjs.org/express-jwt/-/express-jwt-5.3.1.tgz"
+  "version" "5.3.1"
   dependencies:
-    "@types/express-unless" "^0.5.3"
-    "@types/jsonwebtoken" "^8.5.8"
-    "express-unless" "^2.0.2"
-    "jsonwebtoken" "^8.5.1"
+    "async" "^1.5.0"
+    "express-unless" "^0.3.0"
+    "jsonwebtoken" "^8.1.0"
+    "lodash.set" "^4.0.0"
 
-"express-unless@^2.0.2":
-  "integrity" "sha512-IrDYOa3tgT4U67ILXCfrAEOggYSIr8DXgm7oiH7ZaetxlS0MYXtPOUQ5No2HLOFE2Z5x9euVoHGdc5QNrZ5SWw=="
-  "resolved" "https://registry.npmjs.org/express-unless/-/express-unless-2.1.1.tgz"
-  "version" "2.1.1"
+"express-unless@^0.3.0":
+  "integrity" "sha512-MPF0KbUOTUMvTQ8/1+bewiYGdCbSL4FvkuVNe2ydjZ0HE/Uq2+NPfKLb1vA5DbcvVPrrAg6GB0ULURUALzzgqw=="
+  "resolved" "https://registry.npmjs.org/express-unless/-/express-unless-0.3.1.tgz"
+  "version" "0.3.1"
 
 "express@^4.18.1":
   "integrity" "sha512-zZBcOX9TfehHQhtupq57OF8lFZ3UZi08Y97dwFCkD8p9d/d2Y3M+ykKcwaMDEL+4qyUolgBDX6AblpR3fL212Q=="
@@ -1694,7 +1692,7 @@
   dependencies:
     "minimist" "^1.2.0"
 
-"jsonwebtoken@^8.5.1":
+"jsonwebtoken@^8.1.0", "jsonwebtoken@^8.5.1":
   "integrity" "sha512-XjwVfRS6jTMsqYs0EsuJ4LGxXV14zQybNd4L2r0UvbVnSF9Af8x7p5MzbJ90Ioz/9TI41/hTCvznF/loiSzn8w=="
   "resolved" "https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-8.5.1.tgz"
   "version" "8.5.1"
@@ -1841,6 +1839,11 @@
   "integrity" "sha512-Sb487aTOCr9drQVL8pIxOzVhafOjZN9UU54hiN8PU3uAiSV7lx1yYNpbNmex2PK6dSJoNTSJUUswT651yww3Mg=="
   "resolved" "https://registry.npmjs.org/lodash.once/-/lodash.once-4.1.1.tgz"
   "version" "4.1.1"
+
+"lodash.set@^4.0.0":
+  "integrity" "sha512-4hNPN5jlm/N/HLMCO43v8BXKq9Z7QdAGc/VGrRD61w8gN9g/6jF9A4L1pbUgBLCffi0w9VsXfTOij5x8iTyFvg=="
+  "resolved" "https://registry.npmjs.org/lodash.set/-/lodash.set-4.3.2.tgz"
+  "version" "4.3.2"
 
 "lodash@^4.17.21", "lodash@>=4.17.21":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="

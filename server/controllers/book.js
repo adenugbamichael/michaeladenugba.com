@@ -24,7 +24,7 @@ exports.saveBook = (req, res) => {
   })
 }
 
-exports.updateook = (req, res) => {
+exports.updateBook = (req, res) => {
   const bookId = req.params.id
   const bookData = req.body
 

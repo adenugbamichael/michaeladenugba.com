@@ -32,37 +32,30 @@ class Portfolios extends React.Component {
       return (
         <Col md='4'>
           <React.Fragment key={index}>
-            <span className='outside'>
+            <span>
               <Card
-                className='portfolio-card inner'
+                className='portfolio-card'
                 // style={{
                 //   width: "18rem",
                 // }}
               >
-                <CardHeader className='portfolio-card-header'>
+                {/* <CardHeader className='portfolio-card-header'>
                   Some Position {index}
-                </CardHeader>
+                </CardHeader> */}
                 <img
                   alt='Card cap'
                   src='/static/images/portfolio/kai.png'
                   width='100%'
                 />
                 <CardBody>
-                  <div class='tool'>
-                    <ul>
-                      <li>react</li>
-                      <li>nodejs</li>
-                      <li>nextjs</li>
-                      <li>serverless</li>
-                      <li>auth0</li>
-                      <li>Styled components</li>
-                    </ul>
-                  </div>
+                  <CardTitle className='portfolio-card-title'>
+                    Some Company {index}
+                  </CardTitle>
                   <CardText className='portfolio-card-text'>
                     Some quick example text to build on the card title and make
                     up the bulk of the card‘s content.
                   </CardText>
-                  <div className='readMore'> </div>
+                  <div className='readMore'>View Project </div>
                 </CardBody>
               </Card>
             </span>
