@@ -7,7 +7,7 @@ class Blogs extends React.Component {
     return (
       <BaseLayout {...this.props.auth}>
         <BasePage>
-          <h1>I am Blogs Page</h1>
+          <h1>I am Blogs page</h1>
         </BasePage>
       </BaseLayout>
     )

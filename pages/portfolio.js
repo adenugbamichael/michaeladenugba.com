@@ -24,8 +24,8 @@ class Portfolio extends React.Component {
     return (
       <BaseLayout {...this.props.auth}>
         <BasePage>
-          <h1>{portfolio.title}</h1>
-          <h2>BODY: {portfolio.body}</h2>
+          <h2>{portfolio.title}</h2>
+          <p>BODY: {portfolio.body}</p>
           <p>ID: {portfolio.id}</p>
         </BasePage>
       </BaseLayout>

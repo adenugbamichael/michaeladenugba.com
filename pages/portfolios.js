@@ -2,75 +2,95 @@ import React from "react"
 import BaseLayout from "@layouts/BaseLayout"
 import BasePage from "@components/BasePage"
 import { Link } from "../routes"
-import axios from "axios"
-import {
-  Row,
-  Col,
-  Card,
-  CardBody,
-  CardHeader,
-  CardTitle,
-  CardText,
-} from "reactstrap"
+import { Row, Col, Button } from "reactstrap"
+import { Router } from "../routes"
+import { getPortfolios } from "../actions"
 class Portfolios extends React.Component {
   static async getInitialProps() {
-    let posts = []
+    let portfolios = []
     try {
-      const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/posts"
-      )
-      posts = response.data
+      portfolios = await getPortfolios()
     } catch (err) {
       console.error(err)
     }
-
-    return { posts: posts.splice(0, 10) }
+    return { portfolios }
   }
 
-  renderPosts(posts) {
-    return posts.map((post, index) => {
+  renderPortfolios(portfolios) {
+    return portfolios.map((portfolio, index) => {
       return (
-        <Col md='4'>
-          <React.Fragment key={index}>
-            <span>
-              <Card
-                className='portfolio-card'
-                // style={{
-                //   width: "18rem",
-                // }}
-              >
-                {/* <CardHeader className='portfolio-card-header'>
-                  Some Position {index}
-                </CardHeader> */}
-                <img
-                  alt='Card cap'
-                  src='/static/images/portfolio/kai.png'
-                  width='100%'
-                />
-                <CardBody>
-                  <CardTitle className='portfolio-card-title'>
-                    Some Company {index}
-                  </CardTitle>
-                  <CardText className='portfolio-card-text'>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card‘s content.
-                  </CardText>
-                  <div className='readMore'>View Project </div>
-                </CardBody>
-              </Card>
-            </span>
-          </React.Fragment>
-        </Col>
+        <React.Fragment key={index}>
+          <article className='project'>
+            <Col md='6'>
+              <a href='#' className='preview'>
+                <img src='/static/images/portfolio/pic1.png' />
+
+                {/* {portfolio.image} */}
+              </a>
+            </Col>
+            <Col md='6'>
+              <section>
+                {/* <h2>kia-clothing</h2> */}
+                {/* <p>Created August 2022</p> */}
+                <h2>{portfolio.title}</h2>
+                <p>{portfolio.startDate}</p>
+                <p>{portfolio.description}</p>
+                {/* <p>
+                A shopping site for grocery👕👠 purchase with stripe payment.
+              </p> */}
+                <div className='links'>
+                  <a href='#'>Website Link</a>
+                  <a href='#'>GitHub Link</a>
+                </div>
+                <ul className='project-tags'>
+                  <li>SSL</li>
+
+                  <li>mongoDB</li>
+
+                  <li>Nextjs</li>
+
+                  <li>Auth0</li>
+                  <li>Reactjs</li>
+                </ul>
+                {
+                  <React.Fragment>
+                    <Button
+                      onClick={() =>
+                        Router.pushRoute(`/portfolios/${portfolio._id}/edit`)
+                      }
+                      color='warning'
+                    >
+                      Edit
+                    </Button>{" "}
+                    <Button color='danger'>Delete</Button>
+                  </React.Fragment>
+                }
+              </section>
+            </Col>
+          </article>
+        </React.Fragment>
       )
     })
   }
 
   render() {
-    const { posts } = this.props
+    const { portfolios } = this.props
+
     return (
       <BaseLayout {...this.props.auth}>
-        <BasePage className='portfolio-page' title='Portfolios'>
-          <Row className='wholepost'>{this.renderPosts(posts)}</Row>
+        <BasePage
+          className='portfolio-page cmain'
+          title='Portfolios'
+          body="Here are a few projects I've created recently."
+        >
+          <Button
+            onClick={() => Router.pushRoute("/portfolioNew")}
+            color='success'
+            className='create-port-btn'
+          >
+            Create Portfolio
+          </Button>
+          <Row>{this.renderPortfolios(portfolios)}</Row>
         </BasePage>
       </BaseLayout>
     )

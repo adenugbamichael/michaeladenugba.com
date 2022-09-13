@@ -43,7 +43,7 @@ class Index extends React.Component {
                           {/* <img src='/static/images/frame.svg' alt='' /> */}
                         </div>
                         <div className='hero-section-content-intro-'>
-                          hello world 🌎. I'm <span>michael adenugba</span>
+                          hello world 🌎. I'm <span>michael</span>
                         </div>
                       </div>
                       <img
@@ -65,12 +65,12 @@ class Index extends React.Component {
                       Engineer. Developer.
                     </h1>
 
-                    <p className='split'>
+                    <h5 className='split'>
                       I'm a software engineer, mainly focused in frontend
                       development, but I enjoy creating apps and things people
                       will like to use. I also use an open source to share
                       knowledge. You can check my full bio on the links below.
-                    </p>
+                    </h5>
                   </div>
 
                   <Row className='soci-up'>

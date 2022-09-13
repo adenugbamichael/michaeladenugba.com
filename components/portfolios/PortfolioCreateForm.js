@@ -1,6 +1,6 @@
 import React from "react"
 import { Formik, Form, Field, ErrorMessage } from "formik"
-import { Button, Alert } from "reactstrap"
+import { Button, Alert, Row, Col } from "reactstrap"
 import PortInput from "../form/PortInput"
 import PortDate from "../form/PortDate"
 
@@ -25,33 +25,18 @@ const validateInputs = (values) => {
   return errors
 }
 
-const INITIAL_VALUES = {
-  title: "",
-  image: "",
-  company: "",
-  location: "",
-  position: "",
-  description: "",
-  startDate: "",
-  endDate: "",
-}
-
 const PortfolioCreateForm = ({ initialValues, onSubmit, error }) => (
   <div>
     <Formik
-      initialValues={INITIAL_VALUES}
+      initialValues={initialValues}
       validate={validateInputs}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2))
-          setSubmitting(false)
-        }, 400)
-      }}
+      onSubmit={onSubmit}
     >
       {({ isSubmitting }) => (
         <Form>
           <Field label='Title' type='text' name='title' component={PortInput} />
-          <Field label='Image' type='text' name='image' component={PortInput} />
+          {/* <Field label='Image' type='text' name='image' component={PortInput} /> */}
+
           <Field
             label='Company'
             type='text'
@@ -76,11 +61,26 @@ const PortfolioCreateForm = ({ initialValues, onSubmit, error }) => (
             name='description'
             component={PortInput}
           />
-          <Field label='Start Date' name='startDate' component={PortDate} />
-          <Field label='End Date' name='endDate' component={PortDate} />
-          <button type='submit' disabled={isSubmitting}>
-            Create
-          </button>
+
+          <Field
+            label='Start Date'
+            name='startDate'
+            initialDate={initialValues.startDate}
+            component={PortDate}
+          />
+
+          <Field
+            label='End Date'
+            name='endDate'
+            canBeDisabled={true}
+            initialDate={initialValues.endDate}
+            component={PortDate}
+          />
+          {error && <Alert color='danger'>{error}</Alert>}
+
+          <Button color='success' type='submit' disabled={isSubmitting}>
+            Submit Portfolio
+          </Button>
         </Form>
       )}
     </Formik>

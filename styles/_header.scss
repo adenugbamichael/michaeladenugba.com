@@ -3,6 +3,8 @@
 // }
 .bgcolor {
   background-color: #2e2e2e !important;
+  border-top: 0.5rem solid rgb(136, 136, 136);
+  -webkit-font-smoothing: antialiased;
 }
 // img {
 //   vertical-align: none !important;
@@ -15,7 +17,6 @@
 
   span {
     color: rgb(199, 199, 199);
-    // color: rgb(204, 204, 204);
     align-items: center;
     display: flex;
   }
@@ -27,8 +28,8 @@
   .port-navbar {
     &-brand {
       color: rgb(199, 199, 199);
-      // color: rgb(204, 204, 204);
-      font-size: 24px;
+
+      font-size: 2em;
       font-weight: bold;
     }
     &-item {
@@ -38,24 +39,30 @@
 
     &-link {
       color: rgb(199, 199, 199);
-      // color: rgb(204, 204, 204);
-
       letter-spacing: 0.8px;
       font-size: 1rem !important;
 
       &.active {
-        color: #ffa000;
+        color: rgb(199, 199, 199);
       }
 
       &:hover,
       &:focus {
-        color: #ffa000;
+        color: rgb(199, 199, 199);
+        // box-shadow: inset 0 -2px;
       }
     }
   }
+
+  .underline:hover,
+  .underline:focus {
+    padding: 0 0 1px;
+    border-bottom: 2px solid rgb(199, 199, 199);
+  }
 }
-.spa {
-  font-size: 1rem;
+
+.shift {
+  flex-grow: 0;
 }
 
 @media (max-width: 768px) {

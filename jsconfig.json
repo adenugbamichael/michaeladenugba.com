@@ -5,7 +5,8 @@
       "@styles/*": ["styles/*"],
       "@layouts/*": ["components/layouts/*"],
       "@components/*": ["components/*"],
-      "@hoc/*": ["components/hoc/*"]
+      "@hoc/*": ["components/hoc/*"],
+      "@portfolios/*": ["components/portfolios/*"]
     }
   }
 }
