@@ -57,6 +57,7 @@ export default class SlateEditor extends React.Component {
       <React.Fragment>
         {isLoaded && (
           <Editor
+            {...this.props}
             placeholder='Enter some text...'
             value={this.state.value}
             onChange={this.onChange}
@@ -73,7 +74,7 @@ export default class SlateEditor extends React.Component {
     const children = next()
     return (
       <React.Fragment>
-        <ControllMenu></ControllMenu>
+        <ControllMenu save={props.save}></ControllMenu>
         {children}
         <HoverMenu innerRef={(menu) => (this.menu = menu)} editor={editor} />
       </React.Fragment>
