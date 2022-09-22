@@ -1,5 +1,8 @@
 import React from "react"
+
 import HoverMenu from "./HoverMenu"
+import ControllMenu from "./ControllMenu"
+
 import { Editor } from "slate-react"
 import { initialValue } from "./initial-value"
 import { renderMark, renderNode } from "./renderers"
@@ -70,8 +73,8 @@ export default class SlateEditor extends React.Component {
     const children = next()
     return (
       <React.Fragment>
+        <ControllMenu></ControllMenu>
         {children}
-
         <HoverMenu innerRef={(menu) => (this.menu = menu)} editor={editor} />
       </React.Fragment>
     )
