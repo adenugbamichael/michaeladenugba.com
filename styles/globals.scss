@@ -5,8 +5,9 @@
 // PAGES
 @import "./Home.module.scss";
 @import "./portfolios";
+@import "./blogs";
 
-// C
+// COMPONENTS
 @import "./header";
 * {
   margin: 0px;
@@ -89,6 +90,7 @@ h1 {
       display: inline-block;
       margin-bottom: 10px;
       font-size: 2rem;
+      font-weight: 700;
     }
   }
 }

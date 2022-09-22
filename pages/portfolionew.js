@@ -7,6 +7,7 @@ import { createPortfolio } from "../actions"
 
 import withAuth from "@hoc/withAuth"
 import { Router } from "../routes"
+import moment from "moment"
 
 const INITIAL_VALUES = {
   title: "",
@@ -15,8 +16,8 @@ const INITIAL_VALUES = {
   location: "",
   position: "",
   description: "",
-  startDate: "",
-  endDate: "",
+  startDate: moment(),
+  endDate: moment(),
 }
 
 class PortfolioNew extends React.Component {
