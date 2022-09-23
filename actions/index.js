@@ -70,3 +70,11 @@ export const deletePortfolio = (portfolioId) => {
     .delete(`/portfolios/${portfolioId}`, setAuthHeader())
     .then((response) => response.data)
 }
+
+// -------Blog Actions--------------------------//
+export const createBlog = (blogData) => {
+  return axiosInstance
+    .post("/blogs", blogData, setAuthHeader())
+    .then((responsive) => responsive.data)
+    .catch((err) => rejectPromise(err))
+}
