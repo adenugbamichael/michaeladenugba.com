@@ -72,9 +72,26 @@ export const deletePortfolio = (portfolioId) => {
 }
 
 // -------Blog Actions--------------------------//
-export const createBlog = (blogData) => {
+
+export const getUserBlogs = async (req) => {
+  return await axiosInstance
+    .get("/blogs/me", setAuthHeader(req))
+    .then((response) => response.data)
+}
+
+export const createBlog = (blogData, lockId) => {
   return axiosInstance
-    .post("/blogs", blogData, setAuthHeader())
+    .post(`/blogs?lockId=${lockId}`, blogData, setAuthHeader())
     .then((responsive) => responsive.data)
     .catch((err) => rejectPromise(err))
+}
+export const updateBlog = (blogData, blogId) => {
+  return axiosInstance
+    .patch(`/blogs/${blogId}`, blogData, setAuthHeader())
+    .then((responsive) => responsive.data)
+    .catch((err) => rejectPromise(err))
+}
+
+export const getBlogById = (blogId) => {
+  return axiosInstance.get(`/blogs/${blogId}`).then((response) => response.data)
 }
