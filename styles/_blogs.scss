@@ -187,5 +187,27 @@ blockquote {
 .base-page {
   &.blog-user-page {
     padding-top: 50px;
+
+    .user-blogs-list {
+      list-style: none;
+      padding-left: 0;
+
+      > li {
+        font-size: 28px;
+        color: black;
+      }
+      a {
+        // color: #424242;
+        color: #7b7b7b;
+      }
+    }
+
+    .blog-status-title {
+      font-weight: bold;
+    }
+
+    .port-dropdown {
+      margin-left: 10px;
+    }
   }
 }
