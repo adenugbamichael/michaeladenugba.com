@@ -82,13 +82,14 @@ export const getUserBlogs = async (req) => {
 export const createBlog = (blogData, lockId) => {
   return axiosInstance
     .post(`/blogs?lockId=${lockId}`, blogData, setAuthHeader())
-    .then((responsive) => responsive.data)
+    .then((response) => response.data)
     .catch((err) => rejectPromise(err))
 }
+
 export const updateBlog = (blogData, blogId) => {
   return axiosInstance
     .patch(`/blogs/${blogId}`, blogData, setAuthHeader())
-    .then((responsive) => responsive.data)
+    .then((response) => response.data)
     .catch((err) => rejectPromise(err))
 }
 

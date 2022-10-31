@@ -38,16 +38,14 @@ export default class PortButtonDropdown extends React.Component {
     const { items } = this.props
 
     return (
-      <div className='d-flex p-5'>
-        <ButtonDropdown
-          className='port-dropdown'
-          isOpen={this.state.dropdownOpen}
-          toggle={this.toggle}
-        >
-          <DropdownToggle caret size='sm'></DropdownToggle>
-          <DropdownMenu>{this.renderMenu(items)}</DropdownMenu>
-        </ButtonDropdown>
-      </div>
+      <ButtonDropdown
+        className='port-dropdown'
+        isOpen={this.state.dropdownOpen}
+        toggle={this.toggle}
+      >
+        <DropdownToggle caret size='sm'></DropdownToggle>
+        <DropdownMenu>{this.renderMenu(items)}</DropdownMenu>
+      </ButtonDropdown>
     )
   }
 }
