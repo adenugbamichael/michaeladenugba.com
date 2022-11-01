@@ -15,6 +15,8 @@ router.get(
 
 router.get("/:id", blogCtrl.getBlogById)
 
+router.get("/s/:slug", blogCtrl.getBlogBySlug)
+
 router.post(
   "",
   authService.checkJWT,
