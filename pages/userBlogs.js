@@ -1,7 +1,7 @@
 import React from "react"
 import BaseLayout from "@layouts/BaseLayout"
 import BasePage from "@components/BasePage"
-import { Container, Row, Col } from "reactstrap"
+import { Container, Row, Col, Button } from "reactstrap"
 import PortButtonDropdown from "../components/ButtonDropdown"
 
 import withAuth from "../components/hoc/withAuth"
@@ -108,7 +108,11 @@ class UserBlogs extends React.Component {
               <div className='col-lg-8 col-md-10 mx-auto'>
                 <div className='site-heading'>
                   <h1 className='hblog'></h1>
-                  {/* <span className='subheading'>Programming, ...</span> */}
+                  <span className='subheading'>
+                    <Link route='/blogs/new'>
+                      <Button color='primary'>Create a new Blog</Button>
+                    </Link>
+                  </span>
                 </div>
               </div>
             </div>
