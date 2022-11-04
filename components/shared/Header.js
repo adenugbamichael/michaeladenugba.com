@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import Link from "next/link"
+import ActiveLink from "../ActiveLink"
 import {
   Collapse,
   Navbar,
@@ -8,7 +9,7 @@ import {
   Nav,
   NavItem,
   NavLink,
-  NavbarText,
+ 
 } from "reactstrap"
 
 import auth0 from "../../services/auth0"
@@ -16,18 +17,17 @@ import auth0 from "../../services/auth0"
 const BsNavLink = (props) => {
   const { route, title } = props
   return (
-    <Link href={route}>
-      <a className='nav-link port-navbar-link'>
-        <span className='underline'>{title}</span>
-      </a>
-    </Link>
+    <ActiveLink activeClassName='active' route={route}>
+       <a className='nav-link port-navbar-link'>{title}</a>
+    </ActiveLink>
   )
 }
+{/* <span className='underline'>{title}</span> */}
 
 const Login = () => {
   return (
     <span className='nav-link port-navbar-link clickable' onClick={auth0.login}>
-      <div className='underline'> Login</div>
+      Login
     </span>
   )
 }
@@ -37,7 +37,7 @@ const Logout = () => {
       className='nav-link port-navbar-link clickable'
       onClick={auth0.logout}
     >
-      <div className='underline'>Logout</div>
+      Logout
     </span>
   )
 }
@@ -93,25 +93,18 @@ export default class Header extends React.Component {
               <NavItem className='port-navbar-item'>
                 <BsNavLink route='/cv' title='CV' />
               </NavItem>
-              {/* <NavItem className='port-navbar-item'>
+              {!isAuthenticated && (
+              <NavItem className='port-navbar-item'>
               <Login />
               </NavItem>
+               )}
+               {isAuthenticated && (
               <NavItem className='port-navbar-item'>
               <Logout />
-            </NavItem> */}
+            </NavItem>
+            )}
             </Nav>
-            <span className='port-navbar-item mini'>|</span>
-
-            {!isAuthenticated && (
-              <NavbarText>
-                <Login />
-              </NavbarText>
-            )}
-            {isAuthenticated && (
-              <NavbarText>
-                <Logout />
-              </NavbarText>
-            )}
+            
           </Collapse>
         </Navbar>
       </div>
