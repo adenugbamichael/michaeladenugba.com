@@ -43,20 +43,38 @@
       font-size: 1rem !important;
 
       &.active {
-        
+        box-shadow: inset 0 -2px;
         color: rgb(199, 199, 199);
-        
       }
-      
+
       &:hover,
       &:focus {
-        
+        box-shadow: inset 0 -2px;
         color: rgb(199, 199, 199);
       }
     }
   }
-  
-  
+}
+
+.port-dropdown-menu {
+  background-color: #2e2e2e !important;
+  .port-dropdown-item {
+    color: white;
+  }
+  .port-dropdown-toggle {
+    color: rgb(199, 199, 199);
+
+    &.active {
+      color: rgb(102, 102, 102);
+    }
+  }
+}
+
+// --------- DEFAULT HEADER -------------
+.port-navbar.port-nav-base.port-nav-default {
+  padding: 0.5rem !important;
+  // padding: 0.5rem 0 !important;
+  // background-color: $secondary !important;
 }
 
 .shift {
@@ -77,11 +95,4 @@
   .mini {
     color: #333 !important;
   }
-}
-
-// --------- DEFAULT HEADER -------------
-.port-navbar.port-nav-base.port-nav-default {
-  padding: 0.5rem !important;
-  // padding: 0.5rem 0 !important;
-  // background-color: $secondary !important;
 }
