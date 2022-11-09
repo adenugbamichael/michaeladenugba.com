@@ -8,7 +8,6 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   Dropdown,
   DropdownItem,
   DropdownToggle,
@@ -93,7 +92,7 @@ export default class Header extends React.Component {
                 title='Blogs'
               />
             </DropdownItem>
-            <DropdownItem text>
+            <DropdownItem>
               <BsNavLink
                 className='port-dropdown-item'
                 route='/blogs/new'
