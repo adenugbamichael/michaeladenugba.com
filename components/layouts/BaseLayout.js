@@ -18,6 +18,19 @@ const BaseLayout = (props) => {
           name='keywords'
           content='michael adenugba project, michael developer, michael frontend, michael software, michael engineer, michael open source'
         />
+        <meta
+          property='og:title'
+          content='Michael Adenugba - software engineer, programmer, developer, blogger'
+          d
+        />
+        <meta property='og:locale' content='en_EU' />
+        <meta property='og:url' content='https://localhost:3000' />
+        <meta property='og:type' content='website' />
+        <meta
+          property='og:description'
+          content=' I am michael, a software engineer, mainly focused in frontend development.'
+        />
+
         <link
           rel='stylesheet'
           href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'
