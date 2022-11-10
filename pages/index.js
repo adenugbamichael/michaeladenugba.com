@@ -13,7 +13,12 @@ class Index extends React.Component {
   render() {
     const { isAuthenticated, user } = this.props.auth
     return (
-      <BaseLayout className='cover' {...this.props.auth} headerType='index'>
+      <BaseLayout
+        className='cover'
+        {...this.props.auth}
+        headerType='index'
+        title='Michael Adenugba - Portfolio'
+      >
         <div className='main-section'>
           <div className='background-image'>
             <img src='/static/images/background-index.png' />

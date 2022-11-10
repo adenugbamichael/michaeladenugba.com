@@ -73,7 +73,10 @@ class Portfolios extends React.Component {
     const { isAuthenticated, isSiteOwner } = this.props.auth
 
     return (
-      <BaseLayout {...this.props.auth}>
+      <BaseLayout
+        title='Michael Adenugba - Learn About My Portfolio'
+        {...this.props.auth}
+      >
         <BasePage
           className='portfolio-page main'
           title='Portfolios'

@@ -3,12 +3,13 @@ import Header from "../shared/Header"
 import Head from "next/head"
 
 const BaseLayout = (props) => {
-  const { className, children, isAuthenticated, user, isSiteOwner } = props
+  const { className, children, isAuthenticated, user, isSiteOwner, title } =
+    props
   const headerType = props.headerType || "default"
   return (
     <React.Fragment>
       <Head>
-        <title>Michael Adenugba</title>
+        <title>{title}</title>
         <link
           rel='stylesheet'
           href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'
