@@ -10,6 +10,14 @@ const BaseLayout = (props) => {
     <React.Fragment>
       <Head>
         <title>{title}</title>
+        <meta
+          name='description'
+          content='Hello world 🌎. I am michael, a software engineer, mainly focused in frontend development, but I enjoy creating apps and things people will like to use. I also use an open source to share knowledge.'
+        />
+        <meta
+          name='keywords'
+          content='michael adenugba project, michael developer, michael frontend, michael software, michael engineer, michael open source'
+        />
         <link
           rel='stylesheet'
           href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'

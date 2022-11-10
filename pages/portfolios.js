@@ -79,7 +79,7 @@ class Portfolios extends React.Component {
       >
         <BasePage
           className='portfolio-page main'
-          title='Portfolios'
+          title='Projects'
           body="Here are a few projects I've created recently."
         >
           {isAuthenticated && isSiteOwner && (
