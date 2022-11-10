@@ -119,6 +119,9 @@ export default class Header extends React.Component {
 
   render() {
     const { isAuthenticated, user, className } = this.props
+    const { isOpen } = this.state
+
+    const menuOpenClass = isOpen ? "menu-open" : "menu-class"
 
     return (
       <div className='bgcolor'>
@@ -154,6 +157,7 @@ export default class Header extends React.Component {
               <NavItem className='port-navbar-item'>
                 <BsNavLink route='/cv' title='CV' />
               </NavItem>
+              <span className='port-navbar-item mini'>|</span>
               {!isAuthenticated && (
                 <NavItem className='port-navbar-item'>
                   <Login />
