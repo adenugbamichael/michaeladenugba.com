@@ -52,6 +52,7 @@ class Index extends React.Component {
                         </div>
                       </div>
                       <img
+                        alt='Guy programming welcome picture'
                         className='image imgcover'
                         src='/static/images/HERO.svg'
                       />

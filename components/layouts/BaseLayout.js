@@ -3,8 +3,15 @@ import Header from "../shared/Header"
 import Head from "next/head"
 
 const BaseLayout = (props) => {
-  const { className, children, isAuthenticated, user, isSiteOwner, title } =
-    props
+  const {
+    className,
+    children,
+    isAuthenticated,
+    user,
+    isSiteOwner,
+    title,
+    cannonical,
+  } = props
   const headerType = props.headerType || "default"
   return (
     <React.Fragment>
@@ -30,6 +37,10 @@ const BaseLayout = (props) => {
           property='og:description'
           content=' I am michael, a software engineer, mainly focused in frontend development.'
         />
+
+        {cannonical && (
+          <link rel='cannonical' href={`localhost:3000${cannonical}`} />
+        )}
 
         <link
           rel='stylesheet'
