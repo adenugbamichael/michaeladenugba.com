@@ -43,31 +43,3 @@ export default class MyApp extends App {
     )
   }
 }
-
-//   render() {
-//     const { Component, pageProps, auth } = this.props
-//     return
-//       <ToastContainer /> <Component {...pageProps} auth={auth} />
-//   }
-// }
-
-//////////////////////////////
-////////////////////////////////////
-///////////////////////////////
-
-// // Custom App Scss
-// import "@styles/globals.scss"
-// import "bootstrap/dist/css/bootstrap.min.css"
-
-// import auth0 from "../services/auth0"
-
-// function MyApp({ Component, pageProps, ctx }) {
-//   const isAuthenticated = "object"
-//     ? auth0.clientAuth()
-//     : auth0.serverAuth(ctx.req)
-//   console.log(isAuthenticated)
-
-//   return <Component {...pageProps} />
-// }
-
-// export default MyApp

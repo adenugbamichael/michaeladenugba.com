@@ -36,19 +36,9 @@ class Index extends React.Component {
                       <div className='hero-section-content'>
                         {/* <h2> Full Stack Web Developer </h2> */}
                         <div className='motion'>
-                          {/* <Typed
-                            loop
-                            typeSpeed={60}
-                            backSpeed={60}
-                            strings={this.roles}
-                            backDelay={1000}
-                            loopCount={0}
-                            showCursor
-                            className='self-typed'
-                            cursorChar='|'
-                          /> */}
+                         
 
-                          {/* <img src='/static/images/frame.svg' alt='' /> */}
+                          
                         </div>
                         <div className='hero-section-content-intro-'>
                           hello world 🌎. I'm <span>michael</span>
@@ -70,7 +60,7 @@ class Index extends React.Component {
                 <div className='atween'>
                   <div className='hero-welcome-text'>
                     <h1>
-                      {/* {isAuthenticated && <span>{user.name}</span>} */}
+                      
                       Engineer. Developer.
                     </h1>
 
@@ -140,57 +130,3 @@ class Index extends React.Component {
 
 export default Index
 
-///////////////////////////////////////////////////
-/////////////////////////////////////////////////////
-//   render() {
-//     return (
-//       <div className='home'>
-//         <div className='page'>
-//           <div className='page__main-foot'>
-//             <main>
-//               <article role='none'>
-//                 <header className='topic-header'>
-//                   <div className='content-area'>
-//                     <h1 id='content_heading' className='post__header__title'>
-//                       Michael Adenugba
-//                       <span
-//                         className='txt-down-1 mt-12 display-block'
-//                         role='presentation'
-//                       >
-//                         <Typed
-//                           loop
-//                           typeSpeed={60}
-//                           backSpeed={60}
-//                           strings={this.roles}
-//                           backDelay={1000}
-//                           loopCount={0}
-//                           showCursor
-//                           className='self-typed'
-//                           cursorChar='|'
-//                         />
-//                       </span>
-//                     </h1>
-//                   </div>
-//                 </header>
-//                 <div className='tri' aria-hidden='true'></div>
-//                 <BaseLayout />
-//                 <div className='content-wrap'>
-//                   <div className='content-area'>
-//                     <blockquote className='Quote-sc-16lcn0y-0 daZJE'>
-//                       Hi. 👋 <br></br>
-//                       I'm Michael, a software developer with a passion to build,
-//                       accessible websites and applications. Get informed,
-//                       collaborate and discover my recent works and many more.
-//                     </blockquote>
-//                   </div>
-//                 </div>
-//               </article>
-//             </main>
-//           </div>
-//         </div>
-//       </div>
-//     )
-//   }
-// }
-
-// export default Index

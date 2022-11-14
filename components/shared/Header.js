@@ -25,9 +25,6 @@ const BsNavLink = (props) => {
     </ActiveLink>
   )
 }
-{
-  /* <span className='underline'>{title}</span> */
-}
 
 const Login = () => {
   return (
@@ -139,15 +136,6 @@ export default class Header extends React.Component {
           <NavbarToggler eee onClick={this.toggle} />
           <Collapse className='shift' isOpen={this.state.isOpen} navbar>
             <Nav className='me-auto' navbar>
-              {/* <NavItem className='port-navbar-item'>
-                <BsNavLink route='/' title='Home' />
-              </NavItem>
-              <span className='port-navbar-item mini'>|</span>
-              <NavItem className='port-navbar-item'>
-                <BsNavLink route='/about' title='About' />
-              </NavItem>
-
-              <span className='port-navbar-item mini'>|</span> */}
               <NavItem className='port-navbar-item'>
                 <BsNavLink route='/portfolios' title='Projects' />
               </NavItem>
