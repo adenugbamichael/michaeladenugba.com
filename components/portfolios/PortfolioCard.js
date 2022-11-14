@@ -1,6 +1,6 @@
 import React from "react"
 import { Col } from "reactstrap"
-import PortfolioCardDetail from "./PortfolioCardDetail"
+
 import moment from "moment"
 
 export default class PortfolioCard extends React.Component {
@@ -23,56 +23,45 @@ export default class PortfolioCard extends React.Component {
     const { portfolio, children } = this.props
     const { isOpen } = this.state
     return (
-      <div onClick={this.handleToggle}>
-        <PortfolioCardDetail
-          toggle={this.handleToggle}
-          portfolio={portfolio}
-          isOpen={isOpen}
-        />
-        <article className='project'>
-          <Col md='6'>
-            <a href='#' className='preview'>
-              <img src='/static/images/portfolio/pic1.png' />
+      <article className='project'>
+        <Col md='6'>
+          <a href='#' className='preview'>
+            <img src='/static/images/portfolio/pic1.png' />
+          </a>
+        </Col>
+        <Col md='6'>
+          <section>
+            <h2 className='head'>{portfolio.title}</h2>
 
-              {/* {portfolio.image} */}
-            </a>
-          </Col>
-          <Col md='6'>
-            <section>
-              {/* <h2>kia-clothing</h2> */}
-              {/* <p>Created August 2022</p> */}
-              <h2 className='head'>{portfolio.title}</h2>
-
-              <p className='page'>
-                {moment(portfolio.startDate).format("MMMM YYYY")}
-              </p>
-              <p className='page'>{portfolio.description}</p>
-              {/* <p>
+            <p className='page'>
+              {moment(portfolio.startDate).format("MMMM YYYY")}
+            </p>
+            <p className='page'>{portfolio.description}</p>
+            {/* <p>
                 A shopping site for grocery👕👠 purchase with stripe payment.
               </p> */}
-              <div className='links'>
-                <a className='direct' href='#'>
-                  Website Link
-                </a>
-                <a className='direct' href='#'>
-                  GitHub Link
-                </a>
-              </div>
-              <ul className='project-tags'>
-                <li className='tag'>SSL</li>
+            <div className='links'>
+              <a className='direct' href='#'>
+                Website Link
+              </a>
+              <a className='direct' href='#'>
+                GitHub Link
+              </a>
+            </div>
+            <ul className='project-tags'>
+              <li className='tag'>SSL</li>
 
-                <li className='tag'>mongoDB</li>
+              <li className='tag'>mongoDB</li>
 
-                <li className='tag'>Nextjs</li>
+              <li className='tag'>Nextjs</li>
 
-                <li className='tag'>Auth0</li>
-                <li className='tag'>Reactjs</li>
-              </ul>
-              <div className='readMore'>{children}</div>
-            </section>
-          </Col>
-        </article>
-      </div>
+              <li className='tag'>Auth0</li>
+              <li className='tag'>Reactjs</li>
+            </ul>
+            <div className='readMore'>{children}</div>
+          </section>
+        </Col>
+      </article>
     )
   }
 }

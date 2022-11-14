@@ -35,7 +35,6 @@ const PortfolioCreateForm = ({ initialValues, onSubmit, error }) => (
       {({ isSubmitting }) => (
         <Form>
           <Field label='Title' type='text' name='title' component={PortInput} />
-          
 
           <Field
             label='Company'
