@@ -8,11 +8,11 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
+  UncontrolledDropdown,
   Dropdown,
   DropdownItem,
   DropdownToggle,
   DropdownMenu,
-  NavbarText,
 } from "reactstrap"
 
 import auth0 from "../../services/auth0"
@@ -73,14 +73,15 @@ export default class Header extends React.Component {
 
     if (isSiteOwner) {
       return (
-        <Dropdown
-          className='port-navbar-link port-dropdown-menu'
+        <UncontrolledDropdown
           nav
+          inNavbar
+          className='port-navbar-link port-dropdown-menu'
           isOpen={this.state.dropdownOpen}
           toggle={this.toggleDropdown}
         >
           <DropdownToggle className='port-dropdown-toggle' nav caret>
-            Blog
+            Admin
           </DropdownToggle>
           <DropdownMenu className='port-dropdown-menu'>
             <DropdownItem>
@@ -94,18 +95,18 @@ export default class Header extends React.Component {
               <BsNavLink
                 className='port-dropdown-item'
                 route='/blogs/new'
-                title='Create a Blog'
+                title='Create Blog'
               />
             </DropdownItem>
             <DropdownItem>
               <BsNavLink
                 className='port-dropdown-item'
                 route='/blogs/dashboard'
-                title='Blogs Dashboard'
+                title='Dashboard'
               />
             </DropdownItem>
           </DropdownMenu>
-        </Dropdown>
+        </UncontrolledDropdown>
       )
     }
     return (
@@ -122,44 +123,45 @@ export default class Header extends React.Component {
     const menuOpenClass = isOpen ? "menu-open" : "menu-class"
 
     return (
-      <div className='bgcolor'>
+      <div className='menu-bg'>
         <Navbar
-          dark
-          expand='md'
+          className={`port-navbar port-nav-base absolute ${className} ${menuOpenClass}`}
           color='transparent'
-          className={` port-navbar port-nav-base navspace absolute ${className} ${menuOpenClass}`}
+          dark
+          expand='xxl'
         >
           <NavbarBrand className='port-navbar-brand' href='/'>
-            {/* <img src='/static/images/logo.svg' alt='' /> */}
-            Michael .A
+            ic.
           </NavbarBrand>
 
           <NavbarToggler eee onClick={this.toggle} />
           <Collapse className='shift' isOpen={this.state.isOpen} navbar>
             <Nav className='me-auto' navbar>
               <NavItem className='port-navbar-item'>
+                <BsNavLink route='/' title='Home' />
+              </NavItem>
+
+              <NavItem className='port-navbar-item'>
                 <BsNavLink route='/portfolios' title='Projects' />
               </NavItem>
-              <span className='port-navbar-item mini'>|</span>
 
               {this.renderBlogMenu()}
 
-              <span className='port-navbar-item mini'>|</span>
               <NavItem className='port-navbar-item'>
                 <BsNavLink route='/cv' title='CV' />
               </NavItem>
-            </Nav>
 
-            {!isAuthenticated && (
-              <NavbarText className='port-navbar-item'>
-                <Login />
-              </NavbarText>
-            )}
-            {isAuthenticated && (
-              <NavbarText className='port-navbar-item'>
-                <Logout />
-              </NavbarText>
-            )}
+              {!isAuthenticated && (
+                <NavItem className='port-navbar-item'>
+                  <Login />
+                </NavItem>
+              )}
+              {isAuthenticated && (
+                <NavItem className='port-navbar-item'>
+                  <Logout />
+                </NavItem>
+              )}
+            </Nav>
           </Collapse>
         </Navbar>
       </div>

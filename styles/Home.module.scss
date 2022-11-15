@@ -10,8 +10,7 @@ body {
 
 // WRAPPER
 .cover {
-  // background-image: linear-gradient(45deg, #00aeef 0%, #096fb9 100%);
-  background-color: #222;
+  background-color: rgb(26, 28, 30);
   overflow: hidden;
   position: relative;
   // box-shadow: inset 0 10px 10px rgb(0 0 0 / 88%);
@@ -320,4 +319,3 @@ li {
     width: 85px !important;
   }
 }
-

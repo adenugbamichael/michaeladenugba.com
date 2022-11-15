@@ -1,7 +1,12 @@
-.bgcolor {
-  background-color: #2e2e2e !important;
+.menu-bg {
+  background: #2e2e2e !important;
   border-top: 0.5rem solid rgb(136, 136, 136);
   -webkit-font-smoothing: antialiased;
+  text-align: center;
+}
+.container-fluid {
+  padding-right: 1.75rem;
+  padding-left: 1.75rem;
 }
 
 // HEADER
@@ -9,25 +14,15 @@
   width: 100%;
   z-index: 15;
 
-  span {
-    color: rgb(199, 199, 199);
-    align-items: center;
-    display: flex;
-  }
-  //   padding: 40px;
-  .mini {
-    color: rgb(102, 102, 102);
-  }
-
   .port-navbar {
     &-brand {
       color: rgb(199, 199, 199);
 
-      font-size: 1.5em;
+      font-size: 2em;
       font-weight: bold;
     }
     &-item {
-      margin-left: 0px;
+      margin-left: 10px;
       margin-right: 10px;
     }
 
@@ -42,7 +37,8 @@
 
       &:hover,
       &:focus {
-        color: rgb(10 194 194);
+        color: rgb(10 194 194) !important;
+        border: none;
       }
     }
   }
@@ -50,8 +46,11 @@
 
 .port-dropdown-menu {
   background-color: #2e2e2e !important;
+  border: none !important;
+
   .port-dropdown-item {
     color: white;
+    text-align: center !important;
   }
   &.active {
     color: rgb(102, 102, 102);
@@ -59,15 +58,26 @@
 }
 .port-dropdown-toggle {
   color: rgb(199, 199, 199);
-  margin-left: 0px;
+  margin-left: 10px;
   margin-right: 10px;
 }
 
-// --------- DEFAULT HEADER -------------
+.dropdown-menu.show {
+  display: flex;
+}
+
+////--------- CUSTOMIZED HEADER ----------////
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.1rem;
+}
+
+.navbar-toggler {
+  padding: 0rem 0rem;
+}
+
+////--------- DEFAULT HEADER -------------////
 .port-navbar.port-nav-base.port-nav-default {
   padding: 0.5rem !important;
-
-  // background-color: $secondary !important;
 }
 
 .bg-transparent.menu-open {
@@ -77,10 +87,11 @@
 .bg-transparent.menu-close {
   transition: 1;
 }
-
 .shift {
-  flex-grow: 0;
+  padding-bottom: 28px;
 }
+
+//@MEDIA
 
 @media (max-width: 768px) {
   .navspace {
@@ -90,10 +101,5 @@
   .marjin {
     margin-top: -20px;
     /* margin-bottom: 4rem; */
-  }
-}
-@media (max-width: 767px) {
-  .mini {
-    color: #333 !important;
   }
 }
