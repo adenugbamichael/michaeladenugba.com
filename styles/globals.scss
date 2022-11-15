@@ -2,8 +2,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&Poppins:wght@700");
 
-
-
 // PAGES
 @import "./Home.module.scss";
 @import "./portfolios";
@@ -63,9 +61,9 @@ h1 {
 .clickable {
   cursor: pointer;
 }
-// .absolute {
-//   position: absolute;
-// }
+.absolute {
+  position: absolute;
+}
 
 .error {
   font-weight: 700;

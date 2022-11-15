@@ -12,6 +12,7 @@ import {
   DropdownItem,
   DropdownToggle,
   DropdownMenu,
+  NavbarText,
 } from "reactstrap"
 
 import auth0 from "../../services/auth0"
@@ -126,7 +127,7 @@ export default class Header extends React.Component {
           dark
           expand='md'
           color='transparent'
-          className={`container-md port-navbar port-nav-base navspace absolute ${className}`}
+          className={` port-navbar port-nav-base navspace absolute ${className} ${menuOpenClass}`}
         >
           <NavbarBrand className='port-navbar-brand' href='/'>
             {/* <img src='/static/images/logo.svg' alt='' /> */}
@@ -147,18 +148,18 @@ export default class Header extends React.Component {
               <NavItem className='port-navbar-item'>
                 <BsNavLink route='/cv' title='CV' />
               </NavItem>
-              <span className='port-navbar-item mini'>|</span>
-              {!isAuthenticated && (
-                <NavItem className='port-navbar-item'>
-                  <Login />
-                </NavItem>
-              )}
-              {isAuthenticated && (
-                <NavItem className='port-navbar-item'>
-                  <Logout />
-                </NavItem>
-              )}
             </Nav>
+
+            {!isAuthenticated && (
+              <NavbarText className='port-navbar-item'>
+                <Login />
+              </NavbarText>
+            )}
+            {isAuthenticated && (
+              <NavbarText className='port-navbar-item'>
+                <Logout />
+              </NavbarText>
+            )}
           </Collapse>
         </Navbar>
       </div>

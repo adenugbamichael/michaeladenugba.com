@@ -35,11 +35,7 @@ class Index extends React.Component {
                     <div className='back'>
                       <div className='hero-section-content'>
                         {/* <h2> Full Stack Web Developer </h2> */}
-                        <div className='motion'>
-                         
-
-                          
-                        </div>
+                        <div className='motion'></div>
                         <div className='hero-section-content-intro-'>
                           hello world 🌎. I'm <span>michael</span>
                         </div>
@@ -59,10 +55,7 @@ class Index extends React.Component {
               <Col md='7' className='hero-welcome-wrapper'>
                 <div className='atween'>
                   <div className='hero-welcome-text'>
-                    <h1>
-                      
-                      Engineer. Developer.
-                    </h1>
+                    <h1>Engineer. Developer.</h1>
 
                     <h5 className='split'>
                       I'm a software engineer, mainly focused in frontend
@@ -129,4 +122,3 @@ class Index extends React.Component {
 }
 
 export default Index
-
