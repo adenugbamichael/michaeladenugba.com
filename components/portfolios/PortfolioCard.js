@@ -26,7 +26,7 @@ export default class PortfolioCard extends React.Component {
       <article className='project'>
         <Col md='6'>
           <a href='#' className='preview'>
-            <img src='/static/images/portfolio/pic1.png' />
+            <img src='/static/images/portfolio/jackets.png' />
           </a>
         </Col>
         <Col md='6'>

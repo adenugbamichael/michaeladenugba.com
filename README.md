@@ -8,6 +8,9 @@ First, run the development server:
 npm run dev
 # or
 yarn dev
+
+
+![my portfolio page](../../Downloads/chrome-capture-2022-10-19.gif)
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
