@@ -20,101 +20,125 @@ class Index extends React.Component {
         title='Michael Adenugba - Portfolio'
       >
         <div className='main-section'>
-          <div className='background-image'>
-            <img
-              alt='Homepage background image cover'
-              src='/static/images/background-index.png'
-            />
-          </div>
+          <Row>
+            <Col md='10' lg='8' className='mx-auto  content'>
+              <h1>michael adenugba</h1>
 
-          <Container>
-            <Row>
-              <Col md='5'>
-                <div className='hero-section'>
-                  <div className={`flipper`}>
-                    <div className='back'>
-                      <div className='hero-section-content'>
-                        {/* <h2> Full Stack Web Developer </h2> */}
-                        <div className='motion'></div>
-                        <div className='hero-section-content-intro-'>
-                          hello world 🌎. I'm <span>michael</span>
-                        </div>
-                      </div>
-                      <img
-                        alt='Guy programming welcome picture'
-                        className='image imgcover'
-                        src='/static/images/HERO.svg'
-                      />
-                      <div className='shadow-custom'>
-                        <div className='shadow-inner'> </div>
-                      </div>
-                    </div>
-                  </div>
+              <p>
+                Hi, I’m Michael, a software engineer with a design background,
+                mainly focused in frontend dev, but I enjoy
+                <a href='#'> Creating Apps</a> and
+                <a href='#'> Things People </a> will like to use.
+              </p>
+              <p>
+                I’m enthusiastic about learning new web technologies and using
+                them to build rich user experiences. Currently, I'm working on
+                my <a href='#'>personal projects</a>
+              </p>
+
+              <div align='center'>
+                <a href='#'>
+                  <picture>
+                    <img
+                      src='/static/images/developer.png'
+                      alt='dev logo'
+                      height='125'
+                      width='375'
+                    />
+                  </picture>
+                </a>
+              </div>
+              <p>
+                On top of adding value to the tech community and industry,
+                recently at <a href='#'>syarpa</a> I contributed in improving
+                the user interface new features. I also use an{" "}
+                <a href='#'>Open Source </a>
+                to share knowledge.
+              </p>
+
+              <div id='footer' style={{ align: "center" }}>
+                <hr />
+
+                {/* <div className='social'>
+                    <a
+                      href='mailto:adenugbamicke@gmail.com'
+                      className='icon'
+                      title='Send an email'
+                      target='_blank'
+                      data-v-4d78de60
+                    >
+                      <img src='/static/images/gmail.svg' alt='email' />
+                    </a>
+                    <a
+                      href='https://github.com/adenugbamichael'
+                      className='icon'
+                      title='GitHub'
+                      target='_blank'
+                      data-v-4d78de60
+                    >
+                      <img src='/static/images/github.svg' alt='github' />
+                    </a>
+                    <a
+                      href='https://www.linkedin.com/in/adenugbamichael/'
+                      className='icon'
+                      title='LinkedIn'
+                      target='_blank'
+                      data-v-4d78de60
+                    >
+                      <img src='/static/images/linkedin.svg' alt='linkedin' />
+                    </a>
+                    <a
+                      href='https://twitter.com/MichaelAdenugba'
+                      className='icon'
+                      title='Twitter'
+                      target='_blank'
+                      data-v-4d78de60
+                    >
+                      <img src='/static/images/twitter.svg' alt='twitter' />
+                    </a>
+                  </div> */}
+                <div className='noselect'>
+                  <a
+                    href='mailto:adenugbamicke@gmail.com'
+                    title='Send an email'
+                  >
+                    <img
+                      className='icon'
+                      src='/static/images/gmail.svg'
+                      alt='email'
+                    />
+                  </a>
+
+                  <a href='https://github.com/adenugbamichael' title='Github'>
+                    <img
+                      className='icon space'
+                      src='/static/images/github.svg'
+                      alt='github'
+                    />
+                  </a>
+
+                  <a
+                    href='https://www.linkedin.com/in/adenugbamichael/'
+                    title='LinkedIn'
+                  >
+                    <img
+                      className='icon'
+                      src='/static/images/linkedin.svg'
+                      alt='linkedin'
+                    />
+                  </a>
+
+                  <a href='https://twitter.com/MichaelAdenugba' title='Twitter'>
+                    <img
+                      className='icon space'
+                      src='/static/images/twitter.svg'
+                      alt='twitter'
+                    />
+                  </a>
                 </div>
-              </Col>
-              <Col md='7' className='hero-welcome-wrapper'>
-                <div className='atween'>
-                  <div className='hero-welcome-text'>
-                    <h1>Engineer. Developer.</h1>
-
-                    <h5 className='split'>
-                      I'm a software engineer, mainly focused in frontend
-                      development, but I enjoy creating apps and things people
-                      will like to use. I also use an open source to share
-                      knowledge. You can check my full bio on the links below.
-                    </h5>
-                  </div>
-
-                  <Row className='soci-up'>
-                    <Col sm='2' className='duce'>
-                      <p className='pre'>Connect</p>
-                    </Col>
-                    <Col sm='10' className='roll duce'>
-                      <ul class='social eSPOhw contact-bar'>
-                        <li>
-                          <a
-                            title='My Twitter'
-                            class='contact-item contact-twitter'
-                            href='https://twitter.com/MichaelAdenugba'
-                          >
-                            Twitter
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            title='My GitHub'
-                            class='contact-item contact-github'
-                            href='https://github.com/adenugbamichael'
-                          >
-                            GitHub
-                          </a>
-                        </li>
-
-                        <li>
-                          <a
-                            title='My LinkedIn'
-                            class='contact-item contact-linkedin'
-                            href='https://www.linkedin.com/in/adenugba-michael-925019209/'
-                          >
-                            LinkedIn
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            title='My Email'
-                            class='contact-item contact-email'
-                            href='mailto:adenugbamicke@gmail.com'
-                          >
-                            Email
-                          </a>
-                        </li>
-                      </ul>
-                    </Col>
-                  </Row>
-                </div>
-              </Col>
-            </Row>
-          </Container>
+              </div>
+            </Col>
+          </Row>
         </div>
       </BaseLayout>
     )

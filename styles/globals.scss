@@ -1,6 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap");
+// .font {
+//   font-family: "Squada One", cursive;
+//   font-family: "Libre Baskerville", serif;
+// font-family: 'Oxygen Mono', monospace;
+// }
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&Poppins:wght@700");
+@import url("https://fonts.googleapis.com/css2?family=Squada+One&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
 
 // PAGES
 @import "./Home.module.scss";
@@ -13,49 +21,128 @@
 @import "./header";
 @import "./slate-editor";
 
-* {
-  margin: 0px;
+// :root {
+//   --opacity: 1;
+//   --bgcover: rgb(30 41 59 / var(--opacity));
+//   --gray: rgb(203 213 225 / var(--opacity));
+//   --dgray: rgb(148 163 184 / var(--opacity));
+//   --color: rgb(178, 148, 187);
+//   --hover: rgb(10, 194, 194);
+// }
+:root {
+  // --bgcover: #2d2d2d;
+  // --bgcover: rgb(26, 28, 30);
+  --bgcover: rgb(40, 42, 46);
+  --gray: rgb(197, 200, 198);
+  --dgray: rgb(150, 152, 150);
+  --color: rgb(178, 148, 187);
+  --hover: rgb(10, 194, 194);
 }
-html {
-  // height: 100%;
-  // width: 100%;
-  // font-family: Lucida Grande, Lucida Sans, Lucida Sans Regular,
-  //   Lucida Sans Unicode, Geneva, Verdana, sans-serif !important;
-  font-family: "Nunito Sans", sans-serif !important;
-  display: block !important;
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+header,
+hgroup,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0 0 0 0;
+  line-height: 1.25em;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
-  font-family: "Nunito Sans", sans-serif !important;
-  margin: 0;
-  padding: 0;
-  line-height: 1.4;
-  // display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns:
-    minmax(1rem, 1fr) minmax(0, 1600px px)
-    minmax(1rem, 1fr) !important;
-  min-height: 100vh;
-  color: rgb(197, 200, 198);
-  background-color: rgb(26, 28, 30);
+  color: var(--gray);
+  background: var(--bgcover);
+  font-family: "Oxygen Mono", monospace;
+  max-width: 100%;
+  min-height: 100%;
 }
 
-a {
-  text-decoration: none !important;
+h1 {
+  font-family: "Squada One";
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-align: center;
+  font-family: "Squada One";
 }
 p {
-  font-size: 1rem;
-  color: rgb(199, 199, 199);
-}
-
-h2 {
-  color: rgb(199, 199, 199);
-
-  // color: #ccc;
-}
-h1 {
-  color: rgb(199, 199, 199);
-  // color: rgb(238, 238, 238);
+  font-size: 16px;
 }
 
 .clickable {
@@ -65,31 +152,36 @@ h1 {
   position: absolute;
 }
 
-.error {
-  font-weight: 700;
-  color: #ca486d;
-}
-
-// img {
-//   vertical-align: initial !important;
-// }
-
 // GLOBAL HEADER
 .base-page {
-  padding: 50px 0 50px 0;
-  background-color: #222;
+  padding: 150px 0 100px 0;
+  text-align: center;
+  background-color: var(--bgcover);
   min-height: 100vh;
   color: rgb(199, 199, 199);
-  //////////////////////
-  //////////////////////
 
   .page-header {
     .page-header-title {
       color: rgb(199, 199, 199);
       display: inline-block;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       font-size: 2rem;
       font-weight: 700;
     }
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 0px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bgcover);
+}
+::-webkit-scrollbar-thumb {
+  background: #181a1b;
+}
+:-webkit-scrollbar {
+  width: 10px;
+  height: 0px;
 }

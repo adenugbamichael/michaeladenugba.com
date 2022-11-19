@@ -123,48 +123,46 @@ export default class Header extends React.Component {
     const menuOpenClass = isOpen ? "menu-open" : "menu-class"
 
     return (
-      <div className='menu-bg'>
-        <Navbar
-          className={`port-navbar port-nav-base absolute ${className} ${menuOpenClass}`}
-          color='transparent'
-          dark
-          expand='xxl'
-        >
-          <NavbarBrand className='port-navbar-brand' href='/'>
-            ic.
-          </NavbarBrand>
+      <Navbar
+        className={`port-navbar port-nav-base absolute ${className} ${menuOpenClass}`}
+        color='transparent'
+        dark
+        expand='xxl'
+      >
+        <NavbarBrand className='port-navbar-brand' href='/'>
+          ic.
+        </NavbarBrand>
 
-          <NavbarToggler eee onClick={this.toggle} />
-          <Collapse className='shift' isOpen={this.state.isOpen} navbar>
-            <Nav className='me-auto' navbar>
+        <NavbarToggler eee onClick={this.toggle} />
+        <Collapse className='shift' isOpen={this.state.isOpen} navbar>
+          <Nav className='me-auto' navbar>
+            <NavItem className='port-navbar-item'>
+              <BsNavLink route='/' title='Home' />
+            </NavItem>
+
+            <NavItem className='port-navbar-item'>
+              <BsNavLink route='/portfolios' title='Projects' />
+            </NavItem>
+
+            {this.renderBlogMenu()}
+
+            <NavItem className='port-navbar-item'>
+              <BsNavLink route='/cv' title='CV' />
+            </NavItem>
+
+            {!isAuthenticated && (
               <NavItem className='port-navbar-item'>
-                <BsNavLink route='/' title='Home' />
+                <Login />
               </NavItem>
-
+            )}
+            {isAuthenticated && (
               <NavItem className='port-navbar-item'>
-                <BsNavLink route='/portfolios' title='Projects' />
+                <Logout />
               </NavItem>
-
-              {this.renderBlogMenu()}
-
-              <NavItem className='port-navbar-item'>
-                <BsNavLink route='/cv' title='CV' />
-              </NavItem>
-
-              {!isAuthenticated && (
-                <NavItem className='port-navbar-item'>
-                  <Login />
-                </NavItem>
-              )}
-              {isAuthenticated && (
-                <NavItem className='port-navbar-item'>
-                  <Logout />
-                </NavItem>
-              )}
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
+            )}
+          </Nav>
+        </Collapse>
+      </Navbar>
     )
   }
 }
